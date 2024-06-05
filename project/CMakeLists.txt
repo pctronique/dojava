@@ -12,10 +12,11 @@ include(UseJava)
 
 file(GLOB_RECURSE java_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/*.java)
 file(GLOB lib_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/lib/*.jar)
-file(GLOB libTomcat_SRCS /var/docker/tomcat/tomcat/lib/*.jar)
 
-set(JAR_NAME ROOT)
+set(JAR_NAME dojava)
 set(JAVA_SOURCE_FILES ${java_SRCS})
-add_jar(${JAR_NAME} SOURCES ${JAVA_SOURCE_FILES} INCLUDE_JARS ${lib_SRCS} ${libTomcat_SRCS} MANIFEST "${CMAKE_CURRENT_SOURCE_DIR}/tmp/MANIFEST.MF")
+add_jar(${JAR_NAME} SOURCES ${JAVA_SOURCE_FILES} INCLUDE_JARS ${lib_SRCS} ${libTomcat_SRCS} MANIFEST "${CMAKE_CURRENT_SOURCE_DIR}/tmp/MANIFEST.MF" OUTPUT_DIR "${CMAKE_CURRENT_SOURCE_DIR}/dist/")
+
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/lib DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/dist)
 
 #********** end CmakeLists.txt **********
