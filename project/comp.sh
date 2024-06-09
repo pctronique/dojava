@@ -4,8 +4,8 @@
 
 #!/bin/sh
 
-rm -rf bin
-mkdir bin
+rm -rf dist
+mkdir dist
 rm -rf build
 mkdir build
 rm -rf tmp
