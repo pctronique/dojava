@@ -63,7 +63,7 @@ Mettre le nom du projet.
 
 Modifier le nom de l'exécutable dans le fichier « .env.example » :
 ```
-JAR_NAME_EXE=doligcc
+JAR_NAME_EXE=dojava
 ```
 Mettre le nom de l'exécutable.
 
